@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  height: 600px;
+  width: 800px;
+  justify-content: center;
+  align-items: center;
+  float: right;
+}
+.card {
+  height: 400px;
+  width: 600px;
+  border: 6px solid #ffffff;
+  display: table-cell;
+	vertical-align: bottom;
+}
+.card-text {
+  letter-spacing: 0.03rem;
+}
