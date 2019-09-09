@@ -1,3 +1,6 @@
+div {
+  border-style: none;
+}
 .container {
   display: grid;
   grid-template-columns: 1fr 5fr;

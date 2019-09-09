@@ -1,6 +1,22 @@
 .navbar {
+    display: flex;
     width: 100%;
     height: 50px;
-    padding: 0 15px;
-    background-color: blueviolet;
+    border: 100px;
+    border-style: none;
+    padding: 5px;
+    background-image: linear-gradient(rgb(250, 201, 145), rgba(139, 91, 43, 0.938)150%);
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+
+.button {
+    padding: 15px 32px;
+    color: rgb(90, 90, 90);
+    font-size: 19px;
+    border-style: none;
+    border-radius: 18px;
+    background-image: linear-gradient(rgba(250, 201, 145, 0.233), rgba(139, 91, 43, 0.938)150%);
 }
