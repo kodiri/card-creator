@@ -11,11 +11,11 @@ library.add(fas);
 function App() {
   return (
     <div className="App">
-      <div className='container'>
-        <Navbar></Navbar>
-        <Tools></Tools>
-        <Canva></Canva>
-        <Download></Download>
+      <div className='maincontainer'>
+        <Navbar/>
+        <Tools/>
+        <Canva/>
+        <Download/>
       </div>
     </div>
   );
