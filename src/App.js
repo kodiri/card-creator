@@ -8,12 +8,12 @@ import Download from './Download/Download.js';
 function App() {
   return (
     <div className="App">
+      <div className='container'>
         <Navbar></Navbar>
-        <div className='container'>
-          <Tools></Tools>
-          <Canva></Canva>
-          <Download></Download>
-        </div>
+        <Tools></Tools>
+        <Canva></Canva>
+        <Download></Download>
+      </div>
     </div>
   );
 }

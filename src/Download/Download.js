@@ -4,8 +4,8 @@ import './Download.css';
 
 export default class Download extends Component {
     render() {
-      return <div>
-          <p className='download'>Download</p>
+      return <div className='download'>
+          <p>Download</p>
       </div>
     }
 }
