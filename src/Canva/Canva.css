@@ -1,8 +1,5 @@
 .canva {
-    background-color: #dd9999;
-    height: 800px;
-    width: 100%;
-    color: #ffffff;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 227, 168), rgb(255, 255, 255)110%);
 }
 h1 {
     text-align: center;

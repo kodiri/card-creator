@@ -3,9 +3,9 @@ import './Tools.css';
 
 
 export default class Tools extends Component {
-    render() {
-      return <div>
-          <p className='tools'>Tools</p>
+  render() {
+    return <div className='tools'>
+      Tools
       </div>
-    }
+  }
 }
