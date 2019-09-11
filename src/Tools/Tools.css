@@ -1,3 +1,39 @@
 .tools {
     background-color: yellow;
 }
+
+.accordion__title {
+    cursor: pointer;
+}
+
+.showText.hidden {
+    height: 0;
+    overflow: hidden;
+    transition: all .25s;
+}
+
+.showText {
+    height: 50px;
+    transition: all .25s;
+    color: #03a9f4;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 2.5;
+    border-right: 1px solid blue;
+}
+
+.accordion__section:last-child .showText {
+    border-bottom: 1px solid #03a9f4;
+}
+
+.accordion__section button {
+    width: 100%;
+    background-color: #03a9f4;
+    border: 1px solid blue;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600px;
+}
