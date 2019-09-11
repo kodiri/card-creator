@@ -1,4 +1,30 @@
-.container {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
+.maincontainer {
+ display: grid;
+ grid-template-columns: repeat(5, 1fr);
+ grid-template-rows: auto repeat(3, 1fr);
+ justify-items: stretch;
+ grid-template-areas: 
+"nav nav nav nav nav"
+"tools canva canva canva canva"
+"tools canva canva canva canva"
+"tools canva canva canva canva";
+}
+
+.navbar{
+grid-area: nav;
+
+}
+
+.tools{
+grid-area: tools;
+}
+
+.canva {
+grid-area: canva;
+}
+
+.download {
+grid-column: 5/6;
+grid-row: 4/5;
+z-index: 2;
 }

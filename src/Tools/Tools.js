@@ -6,7 +6,7 @@ import Tool from './Tool.js';
 export default class Tools extends Component {
     render() {
       return (
-        <div>
+        <div className='tools'>
           <Tool
             title="Colors" colors={['blue', 'green','orange', 'pink', 'olive']} changeProperty={(key, value) => 
               this.props.changeProperty(key, value)}

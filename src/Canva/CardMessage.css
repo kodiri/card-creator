@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  height: 600px;
+  width: 800px;
+  justify-content: center;
+  align-items: center;
+  float: right;
+}
+.card {
+  height: 400px;
+  width: 600px;
+  border: 6px solid #ffffff;
+  display: table-cell;
+	vertical-align: middle;
+}
+.card-text {
+  justify-items: center;
+  letter-spacing: 0.03rem;
+}
+.icon {
+  text-align: center;
+  font-size: 26px;
+  color: #313D45;
+}
+.icon-glass {
+  text-align: center;
+  font-size: 100px;
+  color: #E3EEF2;
+}
