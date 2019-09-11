@@ -22,7 +22,8 @@ export default class Tool extends Component {
 
 
     render() {
-        console.log(this.state[this.state.active], 'render')
+        // console.log(this.state[this.state.active], 'render')
+        
         return (
             <>
                 <div className="accordion__section">

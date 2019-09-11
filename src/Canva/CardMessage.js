@@ -3,6 +3,7 @@ import './CardMessage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import GoogleFontLoader from 'react-google-font-loader';
 import contentEditable from './InlineEdit/InlineEdit.js';
+import { thisExpression } from '@babel/types';
 
 export default class Card extends Component {
   constructor(props) {
@@ -15,46 +16,43 @@ export default class Card extends Component {
       message: 'Congratulations!',
     };
   }
-    componentDidMount() {
-      let newState = {
-        font: this.props.font ? this.props.font : this.state.font,
-        image: this.props.image ? this.props.image : this.state.image,
-        frame: this.props.frame ? this.props.frame : this.state.frame,
-        background: this.props.background ? this.props.background : this.state.background,
-        message: this.props.message ? this.props.message : this.state.message,
-      
-      };
 
-      this.setState (newState); 
-    }
+  componentDidMount() {
+    this.setState({background: this.props.background,
+      border: this.props.border
+    })
+  }
   render() {
     let EditableH1 = contentEditable('span');
+    console.log('the bg prop from canva is', this.props.background);
     return (
       <>
-      <div className='container'>
-        <div className='border-card' style={{border: this.state.frame}}>
-    <div className='card' style={{backgroundColor: this.state.background, backgroundImage: `url(${this.state.image})`}}>
-        <h1 className='card-text' style={{color: this.state.font.color, fontFamily: this.state.font.fontFamily,
-        fontSize: this.state.font.fontSize}}><EditableH1 value={this.state.message}/></h1>   
-        <div className='icon'>
-        <FontAwesomeIcon icon={['fas', 'wine-bottle'] } />
+        <div className='container'>
+          <div className='border-card' style={{ border: '' }}>
+            <div className='card' style={{ background: this.props.background, border: this.props.border }}>
+              <h1 className='card-text' style={{
+                color: '', fontFamily: '',
+                fontSize: ''
+              }}><EditableH1 value={'Hello!'} /></h1>
+              <div className='icon'>
+                <FontAwesomeIcon icon={['fas', 'wine-bottle']} />
+              </div>
+              <div className='icon-glass'>
+                <FontAwesomeIcon icon={['fas', 'glass-cheers']} />
+              </div>
+              <GoogleFontLoader
+                fonts={[
+                  {
+                    font: this.state.font.fontFamily,
+                    weights: [400, '400i'],
+                  }
+                ]}
+                subsets={['cyrillic-ext', 'greek']}
+              />
+            </div>
+          </div>
         </div>
-        <div className='icon-glass'>
-        <FontAwesomeIcon icon={['fas', 'glass-cheers'] } />
-        </div>
-    <GoogleFontLoader
-      fonts={[
-        {
-          font: this.state.font.fontFamily,
-          weights: [400, '400i'],
-        }
-      ]}
-      subsets={['cyrillic-ext', 'greek']}
-    />
-      </div>
-    </div>
-    </div>
-    </>
+      </>
     )
   }
 }

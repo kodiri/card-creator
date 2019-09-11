@@ -17,6 +17,7 @@ class App extends React.Component {
 
   changeProperty(key, value) {
     this.setState({[key]: value})
+    console.log('event triggered', key, value)
   }
 
   render() {
