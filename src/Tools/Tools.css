@@ -1,5 +1,5 @@
 .tools {
-    background-color: yellow;
+    background-color: #bad5eb;
 }
 
 .accordion__title {
@@ -15,13 +15,14 @@
 .showText {
     height: 50px;
     transition: all .25s;
-    color: #03a9f4;
+    color: #fff;
     font-size: 20px;
     text-transform: uppercase;
     text-align: center;
     vertical-align: middle;
     line-height: 2.5;
     border-right: 1px solid blue;
+    cursor: pointer;
 }
 
 .accordion__section:last-child .showText {

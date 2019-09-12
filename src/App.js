@@ -12,7 +12,7 @@ library.add(fas);
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {colors: 'red'}
+    this.state = {colors: '#f68989'}
   }
 
   changeProperty(key, value) {

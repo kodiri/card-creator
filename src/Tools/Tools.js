@@ -8,7 +8,7 @@ export default class Tools extends Component {
       return (
         <div className='tools'>
           <Tool
-            title="Colors" colors={['blue', 'green','orange', 'pink', 'olive']} changeProperty={(key, value) => 
+            title="Colors" colors={['skyblue', 'lightseagreen','lemonchiffon', 'violet', 'lightpink']} changeProperty={(key, value) => 
               this.props.changeProperty(key, value)}
           />
           <Tool
