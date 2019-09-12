@@ -31,10 +31,9 @@ export default class Tool extends Component {
                         <p className="accordion__title">{this.props.title}</p>
                     </button>
                     {this.state[this.state.active].map(value => (
-                        <div className={`showText ${this.state.visibleBlock ? "" : " hidden"}`}>
+                        <div key={value} className={`showText ${this.state.visibleBlock ? "" : " hidden"}`}>
                             <div className='accordion__text' value={value}
                                 onClick={() => this.props.changeProperty(this.state.active, value)}>{value}</div>
-
                         </div>
                         )
                     )}

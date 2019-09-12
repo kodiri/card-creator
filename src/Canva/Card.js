@@ -18,18 +18,21 @@ export default class Card extends Component {
   }
 
   componentDidMount() {
-    this.setState({background: this.props.background,
-      border: this.props.border
+    this.setState({
+      background: this.props.background,
+      border: this.props.border, fonts: this.props.fonts
     })
   }
   render() {
     let EditableH1 = contentEditable('span');
-    console.log('the bg prop from canva is', this.props.background);
+   
     return (
+      
       <>
+       {console.log('the fonts prop from canva is aaaa', this.props.fonts)}
         <div className='container'>
           <div className='border-card' style={{ border: '' }}>
-            <div className='card' style={{ background: this.props.background, border: this.props.border }}>
+            <div className='card'  style={{ background: this.props.background, border: this.props.border, fontFamily: this.props.fonts }}>
               <h1 className='card-text' style={{
                 color: '', fontFamily: '',
                 fontSize: ''
