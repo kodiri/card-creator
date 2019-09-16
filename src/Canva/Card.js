@@ -13,23 +13,28 @@ export default class Card extends Component {
       image: 'image',
       frame: '7px solid #ACCCD7',
       background: '#ACCCD7',
-      message: 'Congratulations!',
+      message: 'Congratulations!'
     };
   }
 
   componentDidMount() {
-    this.setState({background: this.props.background,
-      border: this.props.border
+    this.setState({
+      background: this.props.background,
+      border: this.props.border, 
+      fonts: this.props.fonts
+      
     })
   }
   render() {
     let EditableH1 = contentEditable('span');
-    console.log('the bg prop from canva is', this.props.background);
+   
     return (
+      
       <>
+       {console.log('the fonts prop from canva is aaaa', this.props.fonts)}
         <div className='container'>
           <div className='border-card' style={{ border: '' }}>
-            <div className='card' style={{ background: this.props.background, border: this.props.border }}>
+            <div className='card'  style={{ background: this.props.background, border: this.props.border, fontFamily: this.props.fonts, backgroundImage: `url(${this.props.image})` }}>
               <h1 className='card-text' style={{
                 color: '', fontFamily: '',
                 fontSize: ''

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Canva.css';
-import Card from './CardMessage.js';
+import Card from './Card.js';
 import CardImage from './CardImage.js';
 
 export default class Canva extends Component {
@@ -11,13 +11,13 @@ export default class Canva extends Component {
       }
     }
     render() {
-      console.log('the canva bg from app is' ,this.props.background);
+      console.log('the canva bg from app is' ,this.props.fonts);
 
       // let font = {fontFamily: 'Oleo Script, cursive', color: '#313D45', fontSize: '50px'};
       return <div className='canva'>
           {/* <p style={{backgroundColor: this.props.background, 
             border: this.props.frames, fontFamily: this.props.fonts}}>Canva</p> */}
-          <Card image='image' border={this.props.frames} background={this.props.background} message='Congratulations!' ></Card>
+          <Card border={this.props.frames} image={this.props.image} background={this.props.background} fonts={this.props.fonts} message='Congratulations!' ></Card>
           {/* <CardImage font={font} image='https://www.goddardvetgroup.co.uk/content/uploads/2018/01/rabbitcosts.png' frame='7px solid #F69188' background='#ACCCD7' message='Some Bunny Loves You' ></CardImage> */}
           </div>
     }
