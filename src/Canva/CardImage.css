@@ -1,10 +1,9 @@
 .container {
   display: flex;
-  height: 600px;
-  width: 800px;
+  /* height: 600px;
+  width: 800px; */
   justify-content: center;
   align-items: center;
-  float: right;
 }
 .card {
   height: 400px;
@@ -15,4 +14,5 @@
 }
 .card-text {
   letter-spacing: 0.03rem;
+  text-align: center;
 }
