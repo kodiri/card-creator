@@ -25,7 +25,9 @@ class App extends React.Component {
           <div className='maincontainer'>
             <Navbar></Navbar>
             <Tools changeProperty={(key, value) => this.changeProperty(key, value)}></Tools>
-            <Canva background={this.state.bgcolors} frames={this.state.frames} color={this.state.colors} fonts={this.state.fonts} message={this.state.message} changeProperty={(key, value) => this.changeProperty(key, value)}></Canva>
+            <Canva background={this.state.bgcolors} backgroundImage={this.state.bgimages}
+            frames={this.state.frames} color={this.state.colors} fonts={this.state.fonts}
+            message={this.state.message} changeProperty={(key, value) => this.changeProperty(key, value)}></Canva>
             <Download></Download>
           </div>
       </div>

@@ -9,6 +9,7 @@ export default class Tool extends Component {
             bgcolors: this.props.bgcolors, 
             frames: this.props.frames,
             fonts: this.props.fonts,
+            bgimages: this.props.bgImages,
             active: this.props.title.toLowerCase(),
             colors: this.props.colors,
             openProp: this.props.openProp
@@ -31,10 +32,10 @@ export default class Tool extends Component {
                     <button className="accordion" onClick={() => this.on_Click()}>
                         <p className="accordion__title">{this.props.name}</p>
                     </button>
-                    {this.state[this.state.active].map(value => (
+                    {this.state[this.state.active].map((value, index) => (
                         <div key={value} className={`showText ${this.state.visibleBlock ? "" : " hidden"}`}>
                             <div className='accordion__text' value={value}
-                                onClick={() => this.props.changeProperty(this.state.active, value)}>{value}</div>
+                                onClick={() => this.props.changeProperty(this.state.active, value)}>{this.props.names ? this.props.names[index] : value}</div>
                         </div>
                         )
                     )}
