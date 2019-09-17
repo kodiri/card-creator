@@ -12,11 +12,12 @@ library.add(fas);
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {bgcolors: '#f68989', message: 'Congratulations!'}
+    this.state = {colors: '#f68989'}
   }
 
   changeProperty(key, value) {
     this.setState({[key]: value})
+    console.log('event triggered', key, value)
   }
 
   render() {
@@ -25,7 +26,7 @@ class App extends React.Component {
           <div className='maincontainer'>
             <Navbar></Navbar>
             <Tools changeProperty={(key, value) => this.changeProperty(key, value)}></Tools>
-            <Canva background={this.state.bgcolors} frames={this.state.frames} color={this.state.colors} fonts={this.state.fonts} message={this.state.message} changeProperty={(key, value) => this.changeProperty(key, value)}></Canva>
+            <Canva background={this.state.colors} frames={this.state.frames} fonts={this.state.fonts}></Canva>
             <Download></Download>
           </div>
       </div>

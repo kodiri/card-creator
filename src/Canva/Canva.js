@@ -11,14 +11,14 @@ export default class Canva extends Component {
       }
     }
     render() {
-      console.log('the canva colortext from app is' ,this.props.colors);
+      console.log('the canva bg from app is' ,this.props.fonts);
 
       // let font = {fontFamily: 'Oleo Script, cursive', color: '#313D35', fontSize: '50px'};
       return <div className='canva'>
           {/* <p style={{backgroundColor: this.props.background, 
             border: this.props.frames, fontFamily: this.props.fonts}}>Canva</p> */}
-          <Card border={this.props.frames} image={this.props.image} background={this.props.background} color={this.props.color} fonts={this.props.fonts} message={this.props.message} changeProperty={this.props.changeProperty} ></Card>
-          {/* <CardImage font={font} image='shorturl.at/gGN47' frame='7px solid #F69188' background='#ACCCD7' message='Some Bunny Loves You' ></CardImage> */}
+          <Card border={this.props.frames} image={this.props.image} background={this.props.background} fonts={this.props.fonts} message='Congratulations!' ></Card>
+          {/* <CardImage font={font} image='https://www.goddardvetgroup.co.uk/content/uploads/2018/01/rabbitcosts.png' frame='7px solid #F69188' background='#ACCCD7' message='Some Bunny Loves You' ></CardImage> */}
           </div>
     }
 }

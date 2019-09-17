@@ -27,9 +27,8 @@ export default function contentEditable(WrappedComponent) {
     };
 
     save = () => {
-      this.props.changeProperty("message", this.domElm.textContent);
       this.setState({
-        editing: false,
+        editing: false
       }, () => {
         if (this.props.onSave && this.isValueChanged()) {
           console.log('Value is changed', this.domElm.textContent);
