@@ -11,27 +11,28 @@ export default class Tool extends Component {
             fonts: this.props.fonts,
             active: this.props.title.toLowerCase(),
             colors: this.props.colors,
-            open: true,
-            class: "accordion__section"
+            openProp: this.props.openProp
         }
     }
 
     on_Click() {
         this.setState({
-            open:  !this.state.open,
-            class: "accordion__section"
-        });
+            visibleBlock: !this.state.visibleBlock,
+            show: 'active',
+            openProp: !this.props.openProp
+        })
     }
+
+
     render() {
-        {console.log(this.state.open)}
         return (
             <>
-                <div className={this.state.class}>
+                <div className="accordion__section">
                     <button className="accordion" onClick={() => this.on_Click()}>
                         <p className="accordion__title">{this.props.name}</p>
                     </button>
                     {this.state[this.state.active].map(value => (
-                        <div key={value}>
+                        <div key={value} className={`showText ${this.state.visibleBlock ? "" : " hidden"}`}>
                             <div className='accordion__text' value={value}
                                 onClick={() => this.props.changeProperty(this.state.active, value)}>{value}</div>
                         </div>
@@ -40,5 +41,5 @@ export default class Tool extends Component {
                 </div>
             </>
         );
-    } 
+    }
 }
