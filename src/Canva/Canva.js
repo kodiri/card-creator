@@ -18,7 +18,7 @@ export default class Canva extends Component {
           {/* <p style={{backgroundColor: this.props.background, 
             border: this.props.frames, fontFamily: this.props.fonts}}>Canva</p> */}
           <Card border={this.props.frames} image={this.props.image} background={this.props.background} color={this.props.color} fonts={this.props.fonts} message={this.props.message} changeProperty={this.props.changeProperty} ></Card>
-          {/* <CardImage font={font} image='shorturl.at/juBKL' frame='7px solid #F69188' background='#ACCCD7' message='Some Bunny Loves You' ></CardImage> */}
+          {/* <CardImage font={font} image='shorturl.at/gGN47' frame='7px solid #F69188' background='#ACCCD7' message='Some Bunny Loves You' ></CardImage> */}
           </div>
     }
 }
