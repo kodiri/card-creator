@@ -13,7 +13,7 @@ export default class Canva extends Component {
     render() {
       console.log('the canva colortext from app is' ,this.props.colors);
 
-      // let font = {fontFamily: 'Oleo Script, cursive', color: '#313D45', fontSize: '50px'};
+      // let font = {fontFamily: 'Oleo Script, cursive', color: '#313D35', fontSize: '50px'};
       return <div className='canva'>
           {/* <p style={{backgroundColor: this.props.background, 
             border: this.props.frames, fontFamily: this.props.fonts}}>Canva</p> */}
