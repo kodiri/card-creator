@@ -8,19 +8,24 @@ export default class Tools extends Component {
       return (
         <div className='tools'>
           <Tool
-            title="Colors" colors={['skyblue', 'lightseagreen','lemonchiffon', 'violet', 'lightpink']} changeProperty={(key, value) => 
+            title="BgColors" name="Background Color" openProp={false} bgcolors={['skyblue', 'lightseagreen','lemonchiffon', 'violet', 'lightpink']} changeProperty={(key, value) => 
               this.props.changeProperty(key, value)}
           />
           <Tool
-          title="Fonts"
+          title="Fonts" name="Font Style" openProp={false}
           fonts={['Impact, Charcoal, sans-serif', 'Arial, Helvetica, sans-serif', '"Comic Sans MS", cursive, sans-serif']} changeProperty={(key, value) => 
             this.props.changeProperty(key, value)}
         />
           <Tool
-            title="Frames" frames={['5px solid blue', '5px double yellow ', '5px outset purple']} 
+            title="Frames" name='frames' openProp={false} frames={['5px solid blue', '5px double yellow ', '5px outset purple']} 
               changeProperty={(key, value) => 
               this.props.changeProperty(key, value)}
           />
+          <Tool
+            title="Colors" name="Text Color" openProp={false} colors={['skyblue', 'lightseagreen','lemonchiffon', 'violet', 'lightpink']} changeProperty={(key, value) => 
+              this.props.changeProperty(key, value)}
+          />
+          
             {/* <Tool
             title="Images" frames={['./Images/']} 
               changeProperty={(key, value) => 
