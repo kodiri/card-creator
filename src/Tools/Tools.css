@@ -6,14 +6,9 @@
     cursor: pointer;
 }
 
-.showText.hidden {
+.accordion__section > div {
     height: 0;
     overflow: hidden;
-    transition: all .25s;
-}
-
-.showText {
-    height: 50px;
     transition: all .25s;
     color: #fff;
     font-size: 20px;
@@ -23,6 +18,12 @@
     line-height: 2.5;
     border-right: 1px solid blue;
     cursor: pointer;
+}
+
+.accordion__section.open > div{
+    height: 50px;
+    transition: all .25s;
+  
 }
 
 .accordion__section:last-child .showText {
