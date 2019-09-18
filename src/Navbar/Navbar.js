@@ -5,7 +5,7 @@ import './Navbar.css';
 export default class Navbar extends Component {
     render() {
       return <div className='navbar'>
-        <button className='button'>Logo</button>
+        <label className='navlogo'>KS Card Creator</label>
         <button className='button'>Home</button>
         {/* <button className='button'>Reset</button> */}
       </div>

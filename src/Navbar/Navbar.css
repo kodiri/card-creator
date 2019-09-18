@@ -5,6 +5,14 @@
     background: linear-gradient(0deg, rgba(34,148,195,1) 0%, rgba(83,108,210,0.9615196420365021) 100%);
 }
 
+.navlogo {
+    font-size: 33px;
+    margin-left: 20px;
+    color: white;
+    justify-self: left;
+    align-self: center;
+    font-family: cursive;
+}
 .button {
     justify-self: left;
     padding: 15px 32px;
