@@ -12,8 +12,7 @@ export default class Card extends Component {
       font: {fontFamily: 'Oleo Script, cursive', color: '#313D45', fontSize: '50px'},
       image: 'image',
       frame: '7px solid #ACCCD7',
-      background: '#ACCCD7',
-      message: 'Congratulations!'
+      background: '#ACCCD7'
     };
   }
 
@@ -21,8 +20,9 @@ export default class Card extends Component {
     this.setState({
       background: this.props.background,
       border: this.props.border, 
-      fonts: this.props.fonts
-      
+      fonts: this.props.fonts,
+      color: this.props.color,
+      backgroundImage: this.props.backgroundImage
     })
   }
   render() {
@@ -31,14 +31,14 @@ export default class Card extends Component {
     return (
       
       <>
-       {console.log('the fonts prop from canva is aaaa', this.props.fonts)}
         <div className='container'>
           <div className='border-card' style={{ border: '' }}>
-            <div className='card'  style={{ background: this.props.background, border: this.props.border, fontFamily: this.props.fonts, backgroundImage: `url(${this.props.image})` }}>
+            <div className='card'  style={{ background: this.props.background, color: this.props.color,
+               border: this.props.border, backgroundImage: `url(${this.props.backgroundImage})`, backgroundSize: 'cover', fontFamily: this.props.fonts}}>
               <h1 className='card-text' style={{
                 color: '', fontFamily: '',
                 fontSize: ''
-              }}><EditableH1 value={'Hello!'} /></h1>
+              }}><EditableH1 value={this.props.message} changeProperty={this.props.changeProperty}/></h1>
               <div className='icon'>
                 <FontAwesomeIcon icon={['fas', 'wine-bottle']} />
               </div>
