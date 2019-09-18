@@ -9,10 +9,17 @@
   height: 400px;
   width: 600px;
   border: 6px solid #ffffff;
-  display: table-cell;
-	vertical-align: bottom;
+  /* display: table-cell; */
+  vertical-align: bottom;
+  text-align: center;
 }
 .card-text {
+  display: inline-block;
   letter-spacing: 0.03rem;
   text-align: center;
+}
+
+.draggableEl {
+  width: 60%;
+  margin: 0 auto;
 }

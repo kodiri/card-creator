@@ -3,6 +3,7 @@ import './Canva.css';
 import Card from './Card.js';
 import CardImage from './CardImage.js';
 
+
 export default class Canva extends Component {
     constructor(props) {
       super(props);

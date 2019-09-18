@@ -3,10 +3,12 @@ import './App.css';
 import Canva from './Canva/Canva.js';
 import Navbar from './Navbar/Navbar.js';
 import Tools from './Tools/Tools.js';
+import DraggableComp from './Draggable.js'
 // import Tool from './Tools/Tool.js';
 import Download from './Download/Download.js';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import Draggable from './Draggable';
 library.add(fas);
 
 class App extends React.Component {
@@ -31,6 +33,7 @@ class App extends React.Component {
             message={this.state.message} changeProperty={(key, value) => this.changeProperty(key, value)}></Canva>
             <Download></Download>
           </div>
+          {/* <DraggableComp></DraggableComp> */}
       </div>
     );
   }
