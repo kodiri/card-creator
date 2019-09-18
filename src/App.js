@@ -7,6 +7,8 @@ import Tools from './Tools/Tools.js';
 import Download from './Download/Download.js';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import ReactDOM from 'react-dom';
+import { PDFViewer } from '@react-pdf/renderer';
 library.add(fas);
 
 class App extends React.Component {
