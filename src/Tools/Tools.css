@@ -6,16 +6,10 @@
     cursor: pointer;
 }
 
-/* .accordion__section > div.hidden {
-    height: 0;
-    overflow: hidden;
-    transition: all .25s;
-} */
 
 .accordion__inner {
     max-height: 0;
-    overflow: hidden;
-    transition: all .7s;
+    transition: max-height 0.15s ease-out;
 }
 
 .accordion-wrap:last-child .accordion__inner:last-child {
@@ -23,8 +17,8 @@
 }
 
 .accordion__inner.show {
-    overflow: visible;
     max-height: 300px;
+    transition: max-height 0.25s ease-in;
 }
 
 .accordion__inner > div{

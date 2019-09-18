@@ -31,7 +31,6 @@ export default class Card extends Component {
     return (
       
       <>
-       {console.log('the fonts prop from canva is aaaa', this.props.bgImages)}
         <div className='container'>
           <div className='border-card' style={{ border: '' }}>
             <div className='card'  style={{ background: this.props.background, color: this.props.color,
