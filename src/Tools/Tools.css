@@ -6,15 +6,29 @@
     cursor: pointer;
 }
 
-.showText.hidden {
+/* .accordion__section > div.hidden {
     height: 0;
     overflow: hidden;
     transition: all .25s;
+} */
+
+.accordion__inner {
+    max-height: 0;
+    overflow: hidden;
+    transition: all .7s;
 }
 
-.showText {
+.accordion-wrap:last-child .accordion__inner:last-child {
+    border-bottom: 1px dashed blue;
+}
+
+.accordion__inner.show {
+    overflow: visible;
+    max-height: 300px;
+}
+
+.accordion__inner > div{
     height: 50px;
-    transition: all .25s;
     color: #fff;
     font-size: 20px;
     text-transform: uppercase;
@@ -23,6 +37,15 @@
     line-height: 2.5;
     border-right: 1px solid blue;
     cursor: pointer;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(-50%) scaleY(0);
+    }
+    100%{
+        transform: translateY(0) scaleY(1);
+    }
 }
 
 .accordion__section:last-child .showText {
