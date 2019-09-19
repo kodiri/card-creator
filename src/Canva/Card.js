@@ -18,22 +18,27 @@ export default class Card extends Component {
     };
   }
 
+  draggableElement() {
+    let dragEl = document.querySelector('.draggableEl').childNodes;
+    console.log(dragEl);
+  }
+
+
+  // draggableElement()
+
   getPosition(parent, child) {
-    console.log(parent, 'gp');
     const rect = parent.getBoundingClientRect();
     const c = child.getBoundingClientRect();
     let coords = {
       left: -(rect.right - c.right) + 5, top: -(c.top - rect.top) + 5,
       right: rect.right - c.right - 5, bottom: rect.bottom - c.bottom - 5
     }
-    console.log(coords, 'co');
-    console.log(rect, 'rect')
     this.setState({ coords });
   }
 
   componentDidMount() {
     this.getPosition(document.querySelector('.border-card'),
-     document.querySelector(".draggableEl"));
+    document.querySelector(".draggableEl"));
     this.setState({
       background: this.props.background,
       border: this.props.border,
@@ -41,7 +46,8 @@ export default class Card extends Component {
       color: this.props.color,
       backgroundImage: this.props.backgroundImage,
     })
-
+    let dragEl = document.querySelector('.draggableEl').childNodes;
+    console.log([...dragEl]);
   }
   render() {
     let EditableH1 = contentEditable('span');
@@ -53,28 +59,46 @@ export default class Card extends Component {
               background: this.props.background, color: this.props.color,
               border: this.props.border, backgroundImage: `url(${this.props.backgroundImage})`, backgroundSize: 'cover', fontFamily: this.props.fonts
             }}>
-              <Draggable
-                bounds={{
-                  top: this.state.coords.top, bottom: this.state.coords.bottom,
-                  right: this.state.coords.right, left: this.state.coords.left
-                }}
-                onStart={this.handleStart}
-                onDrag={this.handleDrag}
-                onStop={this.handleStop}>
-                <div className="draggableEl">
+              <div className="draggableEl">
+                <Draggable
+                  bounds={{
+                    top: this.state.coords.top, bottom: this.state.coords.bottom,
+                    right: this.state.coords.right, left: this.state.coords.left
+                  }}
+                  onStart={this.handleStart}
+                  onDrag={this.handleDrag}
+                  onStop={this.handleStop}>
                   <h1 className='card-text' style={{
                     color: '', fontFamily: '',
                     fontSize: ''
                   }}>
                     <EditableH1 value={this.props.message} changeProperty={this.props.changeProperty} />
                   </h1>
-
+                </Draggable>
+                <Draggable
+                  bounds={{
+                    top: this.state.coords.top, bottom: this.state.coords.bottom,
+                    right: this.state.coords.right, left: this.state.coords.left
+                  }}
+                  onStart={this.handleStart}
+                  onDrag={this.handleDrag}
+                  onStop={this.handleStop}>
                   <div className='icon'>
                     <FontAwesomeIcon icon={['fas', 'wine-bottle']} />
                   </div>
+                  </Draggable>
+                  <Draggable
+                  bounds={{
+                    top: this.state.coords.top, bottom: this.state.coords.bottom,
+                    right: this.state.coords.right, left: this.state.coords.left
+                  }}
+                  onStart={this.handleStart}
+                  onDrag={this.handleDrag}
+                  onStop={this.handleStop}>
                   <div className='icon-glass'>
                     <FontAwesomeIcon icon={['fas', 'glass-cheers']} />
                   </div>
+                  </Draggable>
                   <GoogleFontLoader
                     fonts={[
                       {
@@ -85,11 +109,11 @@ export default class Card extends Component {
                     subsets={['cyrillic-ext', 'greek']}
                   />
                 </div>
-              </Draggable>
+                {/* </Draggable> */}
+              </div>
             </div>
           </div>
-        </div>
       </>
-    )
-  }
+        )
+      }
 }
