@@ -33,6 +33,7 @@ export default class Tools extends Component {
           fonts={['Impact, Charcoal, sans-serif', 'Arial, Helvetica, sans-serif', '"Comic Sans MS", cursive, sans-serif']} changeProperty={(key, value) => 
             this.props.changeProperty(key, value)}
         />
+        {/* Pdf doesn't accept "px" units */}
           <Tool
             title="Frames" name='frames' frames={['5px solid blue', '5px double yellow ', '5px outset purple']} 
             enabled={this.isOn(2)} f={() => { this.turnOn(2)}} 

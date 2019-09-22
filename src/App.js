@@ -4,11 +4,9 @@ import Canva from './Canva/Canva.js';
 import Navbar from './Navbar/Navbar.js';
 import Tools from './Tools/Tools.js';
 // import Tool from './Tools/Tool.js';
-import Download from './Download/Download.js';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import ReactDOM from 'react-dom';
-import { PDFViewer } from '@react-pdf/renderer';
+import Download from './Download/Download';
 library.add(fas);
 
 class App extends React.Component {
