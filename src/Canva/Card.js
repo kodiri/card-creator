@@ -14,31 +14,29 @@ export default class Card extends Component {
       image: 'image',
       frame: '7px solid #ACCCD7',
       background: '#ACCCD7',
-      coords: { top: 100, bottom: 100, left: 100, right: 100 }
+      coords: { top: 75, bottom: -75, left: 150, right: -150 }
     };
   }
 
   draggableElement() {
     let dragEl = document.querySelector('.draggableEl').childNodes;
-    console.log(dragEl);
   }
 
 
   // draggableElement()
 
-  getPosition(parent, child) {
+  getPosition(parent) {
     const rect = parent.getBoundingClientRect();
-    const c = child.getBoundingClientRect();
+    // const c = child.getBoundingClientRect();
     let coords = {
-      left: -(rect.right - c.right) + 5, top: -(c.top - rect.top) + 5,
-      right: rect.right - c.right - 5, bottom: rect.bottom - c.bottom - 5
+      left: -(rect.right) + 5, top: -(rect.top) + 5,
+      right: rect.right, bottom: rect.bottom
     }
     this.setState({ coords });
   }
 
   componentDidMount() {
-    this.getPosition(document.querySelector('.border-card'),
-    document.querySelector(".draggableEl"));
+    this.getPosition(document.querySelector('.border-card'));
     this.setState({
       background: this.props.background,
       border: this.props.border,
@@ -47,9 +45,10 @@ export default class Card extends Component {
       backgroundImage: this.props.backgroundImage,
     })
     let dragEl = document.querySelector('.draggableEl').childNodes;
-    console.log([...dragEl]);
+    console.log(this.state.background, 'background');
   }
   render() {
+    const dragHandlerd =  {bounds: 'parent', axis: 'both'};
     let EditableH1 = contentEditable('span');
     return (
       <>
@@ -60,14 +59,7 @@ export default class Card extends Component {
               border: this.props.border, backgroundImage: `url(${this.props.backgroundImage})`, backgroundSize: 'cover', fontFamily: this.props.fonts
             }}>
               <div className="draggableEl">
-                <Draggable
-                  bounds={{
-                    top: this.state.coords.top, bottom: this.state.coords.bottom,
-                    right: this.state.coords.right, left: this.state.coords.left
-                  }}
-                  onStart={this.handleStart}
-                  onDrag={this.handleDrag}
-                  onStop={this.handleStop}>
+                <Draggable {...dragHandlerd}>
                   <h1 className='card-text' style={{
                     color: '', fontFamily: '',
                     fontSize: ''
@@ -75,45 +67,31 @@ export default class Card extends Component {
                     <EditableH1 value={this.props.message} changeProperty={this.props.changeProperty} />
                   </h1>
                 </Draggable>
-                <Draggable
-                  bounds={{
-                    top: this.state.coords.top, bottom: this.state.coords.bottom,
-                    right: this.state.coords.right, left: this.state.coords.left
-                  }}
-                  onStart={this.handleStart}
-                  onDrag={this.handleDrag}
-                  onStop={this.handleStop}>
+                <Draggable {...dragHandlerd}>
                   <div className='icon'>
                     <FontAwesomeIcon icon={['fas', 'wine-bottle']} />
                   </div>
-                  </Draggable>
-                  <Draggable
-                  bounds={{
-                    top: this.state.coords.top, bottom: this.state.coords.bottom,
-                    right: this.state.coords.right, left: this.state.coords.left
-                  }}
-                  onStart={this.handleStart}
-                  onDrag={this.handleDrag}
-                  onStop={this.handleStop}>
+                </Draggable>
+                <Draggable {...dragHandlerd}>
                   <div className='icon-glass'>
                     <FontAwesomeIcon icon={['fas', 'glass-cheers']} />
                   </div>
-                  </Draggable>
-                  <GoogleFontLoader
-                    fonts={[
-                      {
-                        font: this.state.font.fontFamily,
-                        weights: [400, '400i'],
-                      }
-                    ]}
-                    subsets={['cyrillic-ext', 'greek']}
-                  />
-                </div>
-                {/* </Draggable> */}
+                </Draggable>
+                <GoogleFontLoader
+                  fonts={[
+                    {
+                      font: this.state.font.fontFamily,
+                      weights: [400, '400i'],
+                    }
+                  ]}
+                  subsets={['cyrillic-ext', 'greek']}
+                />
               </div>
+              {/* </Draggable> */}
             </div>
           </div>
+        </div>
       </>
-        )
-      }
+    )
+  }
 }

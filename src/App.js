@@ -20,6 +20,15 @@ class App extends React.Component {
     console.log('event triggered', key, value)
   }
 
+  saveProperty = () =>{
+    localStorage.clear();
+    for (let key of Object.keys(this.state)) {
+      localStorage.setItem(key, this.state[key]);
+    }
+    console.log(localStorage);
+  }
+
+  
   render() {
     return (
       <div className="App">
@@ -30,6 +39,7 @@ class App extends React.Component {
             frames={this.state.frames} color={this.state.colors} fonts={this.state.fonts}
             message={this.state.message} changeProperty={(key, value) => this.changeProperty(key, value)}></Canva>
             <Download></Download>
+            <button onClick={this.saveProperty}>Save</button>
           </div>
           {/* <DraggableComp></DraggableComp> */}
       </div>

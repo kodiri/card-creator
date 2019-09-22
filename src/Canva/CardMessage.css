@@ -8,7 +8,7 @@
   height: 400px;
   width: 600px;
   border: 6px solid #ffffff;
-  display: table-cell;
+  /* display: table-cell; */
 	vertical-align: middle;
 }
 .card-text {

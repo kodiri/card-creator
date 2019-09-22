@@ -12,6 +12,7 @@
   /* display: table-cell; */
   vertical-align: bottom;
   text-align: center;
+  position: relative;
 }
 .card-text {
   display: inline-block;
@@ -20,9 +21,31 @@
 }
 
 .draggableEl {
-  width: 60%;
-  margin: 0 auto;
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
+
+.draggableEl div, 
+.draggableEl h1 {
+  /* position: absolute;
+  left: 50%;
+  right: -50%; */
+  width: fit-content;
+
+}
+
+.draggableEl div.icon {
+  top: 40%;
+}
+
+.draggableEl div.icon-glass {
+  top: 50%;
+}
+
 
 .react-draggable-dragging {
   border: 1px solid #5972e9;
