@@ -4,9 +4,9 @@ import Canva from './Canva/Canva.js';
 import Navbar from './Navbar/Navbar.js';
 import Tools from './Tools/Tools.js';
 // import Tool from './Tools/Tool.js';
-import Download from './Download/Download.js';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+// import { pdf } from '@react-pdf/renderer';
 library.add(fas);
 
 class App extends React.Component {
@@ -29,7 +29,6 @@ class App extends React.Component {
             <Canva background={this.state.bgcolors} backgroundImage={this.state.bgimages}
             frames={this.state.frames} color={this.state.colors} fonts={this.state.fonts}
             message={this.state.message} changeProperty={(key, value) => this.changeProperty(key, value)}></Canva>
-            <Download></Download>
           </div>
       </div>
     );
