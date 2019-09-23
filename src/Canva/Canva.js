@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './Canva.css';
 import Card from './Card.js';
 import Pdf from './Pdf.js';
-import Download from '../Download/Download.js';
 import CardImage from './CardImage.js';
 
 export default class Canva extends Component {

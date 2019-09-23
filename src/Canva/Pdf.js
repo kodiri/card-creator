@@ -3,6 +3,7 @@ import './CardMessage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import GoogleFontLoader from 'react-google-font-loader';
 import contentEditable from './InlineEdit/InlineEdit.js';
+import '../Download/Download.css';
 // import { thisExpression } from '@babel/types';
 // import "./PDF.css";
 import { PDFDownloadLink, PDFViewer, BlobProvider, Document, Page, Text, View, Image, Link, StyleSheet, Font } from "@react-pdf/renderer";
@@ -107,7 +108,7 @@ const PdfCard = (props) => {
             }
   
  const pdf = (props) => (
-  <div>
+  <div className='download'>
     <PDFDownloadLink document={<PdfCard {...props} />} fileName="card.pdf">
       {({ blob, url, loading, error }) => (loading ? 'Loading card...' : 'Download')}
     </PDFDownloadLink>
