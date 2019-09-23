@@ -1,12 +1,9 @@
 import React, { useState,useEffect } from 'react';
 import './CardMessage.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import GoogleFontLoader from 'react-google-font-loader';
-import contentEditable from './InlineEdit/InlineEdit.js';
 import '../Download/Download.css';
 // import { thisExpression } from '@babel/types';
 // import "./PDF.css";
-import { PDFDownloadLink, PDFViewer, BlobProvider, Document, Page, Text, View, Image, Link, StyleSheet, Font } from "@react-pdf/renderer";
+import { PDFDownloadLink, Document, Page, Text, View, Image, Link, StyleSheet, Font } from "@react-pdf/renderer";
 
 
  
@@ -28,7 +25,7 @@ const PdfCard = (props) => {
       verticalAlign: 'middle',
       alignItems: 'center',
       backgroundColor: 'none',
-      border: 'none', 
+      // border: 'none', 
       backgroundImage: 'none', 
       backgroundSize: 'cover',
     },

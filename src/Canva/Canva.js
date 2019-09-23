@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './Canva.css';
 import Card from './Card.js';
 import Pdf from './Pdf.js';
