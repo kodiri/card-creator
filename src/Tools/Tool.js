@@ -1,4 +1,5 @@
 import React, { useEffect, Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class Tool extends Component {
     constructor(props) {
@@ -31,7 +32,7 @@ export default class Tool extends Component {
             <div className="accordion-wrap">
                 <div className="accordion__section">
                     <button className="accordion" onClick={this.props.f}>
-                        <p className="accordion__title">{this.props.name}</p>
+                  <p className="accordion__title"><FontAwesomeIcon icon={['fas', this.props.icon]} /> {this.props.name}</p>
                     </button>
                     <div className={`accordion__inner ${this.props.enabled ? 'show' : ''}`}>
                         {this.props.enabled &&
