@@ -1,8 +1,11 @@
 .navbar {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    background: rgb(34,193,195);
-    background: linear-gradient(0deg, rgba(34,148,195,1) 0%, rgba(83,108,210,0.9615196420365021) 100%);
+    /* background: rgb(34,193,195); */
+    /* background: linear-gradient(0deg, rgba(34,148,195,1) 0%, rgba(83,108,210,0.9615196420365021) 100%); */
+    background-color: #1464a9;
+    height: 70px;
+   
 }
 
 .navlogo {
@@ -11,7 +14,7 @@
     color: white;
     justify-self: left;
     align-self: center;
-    font-family: cursive;
+    font-family: 'Dancing Script', cursive;
 }
 .button {
     justify-self: left;
