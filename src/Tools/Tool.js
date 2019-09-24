@@ -13,7 +13,8 @@ export default class Tool extends Component {
             bgimages: this.props.bgImages,
             active: this.props.title.toLowerCase(),
             colors: this.props.colors,
-            enabled: this.props.enabled
+            enabled: this.props.enabled,
+            propertyName: this.props.propertyName
         }
     }
 
@@ -33,11 +34,12 @@ export default class Tool extends Component {
                     <button className="accordion" onClick={this.props.f}>
                         <p className="accordion__title">{this.props.name}</p>
                     </button>
+                    {console.log(this.props.propertyName)}
                     <div className={`accordion__inner ${this.props.enabled ? 'show' : ''}`}>
                         {this.props.enabled &&
                             this.state[this.state.active].map((value, index) => (
                                 <div key={value} style={{height: 50}}>
-                                    <div className='accordion__text' value={value}
+                                    <div className='accordion__text' value={value} style={{[this.props.propertyName]: value}}
                                         onClick={() => this.props.changeProperty(this.state.active, value)}>{this.props.names ? this.props.names[index] : value}</div>
                                 </div>
                                 )
