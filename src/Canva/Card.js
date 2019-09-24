@@ -13,30 +13,11 @@ export default class Card extends Component {
       font: { fontFamily: 'Oleo Script, cursive', color: '#313D45', fontSize: '50px' },
       image: 'image',
       frame: '7px solid #ACCCD7',
-      background: '#ACCCD7',
-      coords: { top: 75, bottom: -75, left: 150, right: -150 }
+      background: '#ACCCD7'
     };
   }
 
-  draggableElement() {
-    let dragEl = document.querySelector('.draggableEl').childNodes;
-  }
-
-
-  // draggableElement()
-
-  getPosition(parent) {
-    const rect = parent.getBoundingClientRect();
-    // const c = child.getBoundingClientRect();
-    let coords = {
-      left: -(rect.right) + 5, top: -(rect.top) + 5,
-      right: rect.right, bottom: rect.bottom
-    }
-    this.setState({ coords });
-  }
-
   componentDidMount() {
-    this.getPosition(document.querySelector('.border-card'));
     this.setState({
       background: this.props.background,
       border: this.props.border,
@@ -44,8 +25,6 @@ export default class Card extends Component {
       color: this.props.color,
       backgroundImage: this.props.backgroundImage,
     })
-    let dragEl = document.querySelector('.draggableEl').childNodes;
-    console.log(this.state.background, 'background');
   }
   render() {
     const dragHandlerd =  {bounds: 'parent', axis: 'both'};
@@ -87,7 +66,6 @@ export default class Card extends Component {
                   subsets={['cyrillic-ext', 'greek']}
                 />
               </div>
-              {/* </Draggable> */}
             </div>
           </div>
         </div>
