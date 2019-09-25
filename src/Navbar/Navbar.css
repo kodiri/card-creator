@@ -1,6 +1,6 @@
 .navbar {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 3fr 1fr;
     /* background: rgb(34,193,195); */
     /* background: linear-gradient(0deg, rgba(34,148,195,1) 0%, rgba(83,108,210,0.9615196420365021) 100%); */
     background-color: #1464a9;
@@ -17,14 +17,39 @@
     font-family: 'Dancing Script', cursive;
 }
 .button {
-    justify-self: left;
-    padding: 15px 32px;
+    grid-template-columns: 1fr 1fr;
+    /* justify-self: right; */
+    /* padding: 15px 32px; */
     margin: .7vh;
     color: #fff;
     font-weight: bolder;
     font-size: 19px;
     border-style: none;
-    border-radius: 18px;
-    background-image: linear-gradient(rgba(250, 201, 145, 0.233), rgba(139, 91, 43, 0.938)150%);
+    border-radius: 10px;
+    /* background-image: linear-gradient(rgba(250, 201, 145, 0.233), rgba(139, 91, 43, 0.938)150%); */
     cursor: pointer;
+    height: 50px;
+    width: 130px;
+    align-self: center;
+}
+
+.btn_save {
+    background-color: #8bc34a;
+}
+
+.btn_save:hover {
+    background-color: #37c33c;
+}
+
+.btn_rst {
+    background-color: #ff5722;
+}
+
+.btn_rst:hover {
+    background-color: #f44336;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 50% 50%;
 }

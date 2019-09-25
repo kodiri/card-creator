@@ -29,14 +29,18 @@
     /* color: #fff; */
     color: #3899EC;  
     font-size: 20px;
-    /* text-transform: uppercase; */
-    /* text-align: center; */
     vertical-align: middle;
     line-height: 2.5;
-    border-right: 1px solid;
+    /* border-right: 1px solid; */
     cursor: pointer;
-    margin-left: 20px; 
-   
+}
+.accordion-wrap:nth-of-type(3) .accordion__inner div {
+    padding: 2px;
+    margin-bottom: 15px;
+}
+
+.accordion__text {
+    padding-left: 20px;
 }
 
 @keyframes slide {
