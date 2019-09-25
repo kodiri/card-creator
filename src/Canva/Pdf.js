@@ -9,7 +9,7 @@ import { PDFDownloadLink, Document, Page, Text, View, Image, Link, StyleSheet, F
  
 const PdfCard = (props) => {
 
-  console.log(props);
+  // console.log(props);
 
   const backgroundImage = props.backgroundImage ? props.backgroundImage : 'none';
 
@@ -76,12 +76,12 @@ const PdfCard = (props) => {
     styles.card.border = props.border;
     styles.cardText.color = props.color;
 
-    console.log(styles);
+    // console.log(styles);
     setPdfStyles(StyleSheet.create(styles))
   }, [props]);
 
-  console.log(pdfStyles);
-  console.log(props.message);
+  // console.log(pdfStyles);
+  // console.log(props.message);
   return (
   <Document>
     <Page style={pdfStyles.page} size="A4" wrap>

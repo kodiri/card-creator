@@ -3,7 +3,6 @@ import './CardMessage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import GoogleFontLoader from 'react-google-font-loader';
 import contentEditable from './InlineEdit/InlineEdit.js';
-import { thisExpression } from '@babel/types';
 import Draggable from "react-draggable";
 
 export default class Card extends Component {
