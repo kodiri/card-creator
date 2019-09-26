@@ -3,7 +3,6 @@ import './App.css';
 import Canva from './Canva/Canva.js';
 import Navbar from './Navbar/Navbar.js';
 import Tools from './Tools/Tools.js';
-// import Tool from './Tools/Tool.js';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 library.add(fas);
@@ -11,13 +10,7 @@ library.add(fas);
 class App extends React.Component {
   constructor() {
     super();
-    let obj = this.initialState();
-
-    this.state = { 
-      bgcolors: obj.bgcolors, message: obj.message,
-      colors: obj.colors, frames: obj.frames ,
-      bgimages: obj.bgimages, fonts: obj.fonts
-    };
+    this.state = this.initialState();
     this.saveProperty = this.saveProperty.bind(this);
     this.resetProperties = this.resetProperties.bind(this);
   }
@@ -26,34 +19,30 @@ class App extends React.Component {
     return (
       {bgcolors: localStorage.getItem('bgcolors') || '#f68989', message: localStorage.getItem('message') || 'Congratulations!',
       colors: localStorage.getItem('colors') || '#fff', frames: localStorage.getItem('frames') || '6px solid #fff',
-      bgimages: localStorage.getItem('bgimages') || '', fonts: localStorage.getItem('fonts') || 'Oleo Script, cursive'}
+      bgimages: localStorage.getItem('bgimages') || '', fonts: localStorage.getItem('fonts') || 'Oleo Script, cursive',
+      position0x: localStorage.getItem('position0x') || 0, position0y: localStorage.getItem('position0y') || 0,
+      foo: 0}
     )
   }
 
   changeProperty(key, value) {
     this.setState({ [key]: value })
-    console.log('event triggered', key, value)
   }
 
   resetProperties() {
     window.localStorage.clear();
     let obj = this.initialState();
-    this.setState({ 
-      bgcolors: obj.bgcolors, message: obj.message,
-      colors: obj.colors, frames: obj.frames ,
-      bgimages: obj.bgimages, fonts: obj.fonts
-    });
-    console.log('buutton reset')
+    document.querySelector('.elem1').style.transform = 'translate(0, 0)';
+    this.setState(obj);
   }
 
   saveProperty() {
-    //localStorage.clear();.+
-    console.log(this.state, 'is the this obj in app')
     for (let key of Object.keys(this.state)) {
       localStorage.setItem(key, this.state[key]);
     }
     console.log(localStorage);
-    console.log('button save');
+    localStorage.setItem('position0x', this.state.position0x);
+    localStorage.setItem('position0y', this.state.position0y);
   }
 
   render() {
@@ -64,9 +53,11 @@ class App extends React.Component {
           <Tools changeProperty={(key, value) => this.changeProperty(key, value)}></Tools>
           <Canva background={this.state.bgcolors} backgroundImage={this.state.bgimages}
             frames={this.state.frames} color={this.state.colors} fonts={this.state.fonts}
+            position0x = {this.state.position0x}
+            position0y = {this.state.position0y}
+            position1={this.state.position1} position2={this.state.position2}
+            foo = {this.state.foo}
             message={this.state.message} changeProperty={(key, value) => this.changeProperty(key, value)}></Canva>
-          {/* <button onClick={this.saveProperty}>Save</button>
-          <button onClick={this.resetProperties}>Reset</button> */}
         </div>
       </div>
     );

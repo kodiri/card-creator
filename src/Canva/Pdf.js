@@ -75,6 +75,7 @@ const PdfCard = (props) => {
     styles.card.backgroundColor = props.background;
     styles.card.border = props.border;
     styles.cardText.color = props.color;
+    // styles.cardText.position = 
 
     // console.log(styles);
     setPdfStyles(StyleSheet.create(styles))
