@@ -20,8 +20,8 @@ class App extends React.Component {
       {bgcolors: localStorage.getItem('bgcolors') || '#f68989', message: localStorage.getItem('message') || 'Congratulations!',
       colors: localStorage.getItem('colors') || '#fff', frames: localStorage.getItem('frames') || '6px solid #fff',
       bgimages: localStorage.getItem('bgimages') || '', fonts: localStorage.getItem('fonts') || 'Oleo Script, cursive',
-      position0x: localStorage.getItem('position0x') || 0, position0y: localStorage.getItem('position0y') || 0,
-      foo: 0}
+      position0: localStorage.getItem('position0') || 'translate(0, 0)', position1: localStorage.getItem('position1') || 'translate(0, 0)',
+      position2: localStorage.getItem('position2') || 'translate(0, 0)'}
     )
   }
 
@@ -33,6 +33,8 @@ class App extends React.Component {
     window.localStorage.clear();
     let obj = this.initialState();
     document.querySelector('.elem1').style.transform = 'translate(0, 0)';
+    document.querySelector('.elem2').style.transform = 'translate(0, 0)';
+    document.querySelector('.elem3').style.transform = 'translate(0, 0)';
     this.setState(obj);
   }
 
@@ -40,9 +42,12 @@ class App extends React.Component {
     for (let key of Object.keys(this.state)) {
       localStorage.setItem(key, this.state[key]);
     }
-    console.log(localStorage);
-    localStorage.setItem('position0x', this.state.position0x);
-    localStorage.setItem('position0y', this.state.position0y);
+    let positions = [document.querySelector('.elem1').style.transform,
+    document.querySelector('.elem2').style.transform,
+    document.querySelector('.elem3').style.transform]
+    for (let position in positions) {
+      localStorage.setItem('position' + position, positions[position]);
+    }
   }
 
   render() {
@@ -53,10 +58,8 @@ class App extends React.Component {
           <Tools changeProperty={(key, value) => this.changeProperty(key, value)}></Tools>
           <Canva background={this.state.bgcolors} backgroundImage={this.state.bgimages}
             frames={this.state.frames} color={this.state.colors} fonts={this.state.fonts}
-            position0x = {this.state.position0x}
-            position0y = {this.state.position0y}
+            position0={this.state.position0}
             position1={this.state.position1} position2={this.state.position2}
-            foo = {this.state.foo}
             message={this.state.message} changeProperty={(key, value) => this.changeProperty(key, value)}></Canva>
         </div>
       </div>

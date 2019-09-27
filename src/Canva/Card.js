@@ -16,12 +16,6 @@ export default class Card extends Component {
     };
   }
 
-  draggableEventHandler = (e, data) => {
-    this.setState({position0x: data.x, position0y: data.y})
-    this.props.changeProperty('position0x', data.x);
-    this.props.changeProperty('position0y', data.y);
-  }
-
   componentDidMount() {
     this.setState({
       background: this.props.background,
@@ -30,8 +24,7 @@ export default class Card extends Component {
       color: this.props.color,
       backgroundImage: this.props.backgroundImage
     })
-    console.log(this.state.position0, '000');
-    // document.querySelector('.elem1').style.transform = this.props.position0;
+    document.querySelector('.elem1').style.transform = this.props.position0;
     document.querySelector('.elem2').style.transform = this.props.position1;
     document.querySelector('.elem3').style.transform = this.props.position2;
   }
@@ -39,7 +32,6 @@ export default class Card extends Component {
     const dragHandlerd =  {bounds: 'parent', axis: 'both'};
     let EditableH1 = contentEditable('span');
 
-    console.log("render: " + this.props.foo);
     return (
       <>
         <div className='container'>
@@ -49,7 +41,7 @@ export default class Card extends Component {
               border: this.props.border, backgroundImage: `url(${this.props.backgroundImage})`, backgroundSize: 'cover', fontFamily: this.props.fonts
             }}>
               <div className="draggableEl">
-                <Draggable {...dragHandlerd} defaultPosition = {{x: this.props.position0x, y: this.props.position0y}} onStop={this.draggableEventHandler}>
+                <Draggable {...dragHandlerd}>
                   <h1 className='card-text elem1' style={{
                     color: '', fontFamily: '', transform: this.props.position0,
                     fontSize: ''
