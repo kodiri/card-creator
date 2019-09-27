@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Canva.css';
 import Card from './Card.js';
 import Pdf from './Pdf.js';
-import CardImage from './CardImage.js';
+
 
 
 export default class Canva extends Component {
