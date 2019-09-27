@@ -31,12 +31,13 @@ export default class Tools extends Component {
           />
           <Tool
           title="Fonts"  propertyName='fontFamily' name="Font Style" enabled={this.isOn(1)} f={() => { this.turnOn(1)}} icon="text-width" 
-          fonts={['Impact, Charcoal, sans-serif', 'Arial, Helvetica, sans-serif', '"Comic Sans MS", cursive, sans-serif']} changeProperty={(key, value) => 
+          names={['Impact', 'Helvetica', 'Dancing Script']}
+          fonts={['Impact, Charcoal, sans-serif', 'Arial, Helvetica, sans-serif', '"Dancing Script", cursive']} changeProperty={(key, value) => 
             this.props.changeProperty(key, value)}
         />
         {/* Pdf doesn't accept "px" units */}
           <Tool
-            title="Frames" propertyName='border' name='Frames' icon="border-style" frames={['5px solid blue', '5px double yellow ', '5px outset purple']} 
+            title="Frames" propertyName='border' name='Frames' icon="border-style" frames={['5pt solid blue', '5pt double yellow ', '5pt outset purple']} 
             enabled={this.isOn(2)} f={() => { this.turnOn(2)}} 
             changeProperty={(key, value) => this.props.changeProperty(key, value)}
             names={["solid blue", "double yellow", "outset purple"]}

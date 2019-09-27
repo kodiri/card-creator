@@ -9,9 +9,9 @@ export default class Card extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      font: { fontFamily: 'Oleo Script, cursive', color: '#313D45', fontSize: '50px' },
+      font: { fontFamily: 'Oleo Script, cursive', color: '#313D45', fontSize: '50pt' },
       image: 'image',
-      frame: '7px solid #ACCCD7',
+      frame: '7pt solid #ACCCD7',
       background: '#ACCCD7'
     };
   }
@@ -34,7 +34,7 @@ export default class Card extends Component {
 
     return (
       <>
-        <div className='container'>
+        <div className='cardContainer'>
           <div className='border-card' style={{ border: '' }} >
             <div className='card' style={{
               background: this.props.background, color: this.props.color,
