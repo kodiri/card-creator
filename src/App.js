@@ -3,7 +3,6 @@ import './App.css';
 import Canva from './Canva/Canva.js';
 import Navbar from './Navbar/Navbar.js';
 import Tools from './Tools/Tools.js';
-// import Tool from './Tools/Tool.js';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 library.add(fas);
@@ -11,13 +10,7 @@ library.add(fas);
 class App extends React.Component {
   constructor() {
     super();
-    let obj = this.initialState();
-
-    this.state = { 
-      bgcolors: obj.bgcolors, message: obj.message,
-      colors: obj.colors, frames: obj.frames ,
-      bgimages: obj.bgimages, fonts: obj.fonts
-    };
+    this.state = this.initialState();
     this.saveProperty = this.saveProperty.bind(this);
     this.resetProperties = this.resetProperties.bind(this);
   }
@@ -26,34 +19,35 @@ class App extends React.Component {
     return (
       {bgcolors: localStorage.getItem('bgcolors') || '#f68989', message: localStorage.getItem('message') || 'Congratulations!',
       colors: localStorage.getItem('colors') || '#fff', frames: localStorage.getItem('frames') || '6px solid #fff',
-      bgimages: localStorage.getItem('bgimages') || '', fonts: localStorage.getItem('fonts') || 'Oleo Script, cursive'}
+      bgimages: localStorage.getItem('bgimages') || '', fonts: localStorage.getItem('fonts') || 'Oleo Script, cursive',
+      position0: localStorage.getItem('position0') || 'translate(0, 0)', position1: localStorage.getItem('position1') || 'translate(0, 0)',
+      position2: localStorage.getItem('position2') || 'translate(0, 0)'}
     )
   }
 
   changeProperty(key, value) {
     this.setState({ [key]: value })
-    console.log('event triggered', key, value)
   }
 
   resetProperties() {
     window.localStorage.clear();
     let obj = this.initialState();
-    this.setState({ 
-      bgcolors: obj.bgcolors, message: obj.message,
-      colors: obj.colors, frames: obj.frames ,
-      bgimages: obj.bgimages, fonts: obj.fonts
-    });
-    console.log('buutton reset')
+    document.querySelector('.elem1').style.transform = 'translate(0, 0)';
+    document.querySelector('.elem2').style.transform = 'translate(0, 0)';
+    document.querySelector('.elem3').style.transform = 'translate(0, 0)';
+    this.setState(obj);
   }
 
   saveProperty() {
-    //localStorage.clear();.+
-    console.log(this.state, 'is the this obj in app')
     for (let key of Object.keys(this.state)) {
       localStorage.setItem(key, this.state[key]);
     }
-    console.log(localStorage);
-    console.log('button save');
+    let positions = [document.querySelector('.elem1').style.transform,
+    document.querySelector('.elem2').style.transform,
+    document.querySelector('.elem3').style.transform]
+    for (let position in positions) {
+      localStorage.setItem('position' + position, positions[position]);
+    }
   }
 
   render() {
@@ -64,9 +58,9 @@ class App extends React.Component {
           <Tools changeProperty={(key, value) => this.changeProperty(key, value)}></Tools>
           <Canva background={this.state.bgcolors} backgroundImage={this.state.bgimages}
             frames={this.state.frames} color={this.state.colors} fonts={this.state.fonts}
+            position0={this.state.position0}
+            position1={this.state.position1} position2={this.state.position2}
             message={this.state.message} changeProperty={(key, value) => this.changeProperty(key, value)}></Canva>
-          {/* <button onClick={this.saveProperty}>Save</button>
-          <button onClick={this.resetProperties}>Reset</button> */}
         </div>
       </div>
     );

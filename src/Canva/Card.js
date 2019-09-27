@@ -22,12 +22,16 @@ export default class Card extends Component {
       border: this.props.border,
       fonts: this.props.fonts,
       color: this.props.color,
-      backgroundImage: this.props.backgroundImage,
+      backgroundImage: this.props.backgroundImage
     })
+    document.querySelector('.elem1').style.transform = this.props.position0;
+    document.querySelector('.elem2').style.transform = this.props.position1;
+    document.querySelector('.elem3').style.transform = this.props.position2;
   }
   render() {
     const dragHandlerd =  {bounds: 'parent', axis: 'both'};
     let EditableH1 = contentEditable('span');
+
     return (
       <>
         <div className='cardContainer'>
@@ -38,20 +42,20 @@ export default class Card extends Component {
             }}>
               <div className="draggableEl">
                 <Draggable {...dragHandlerd}>
-                  <h1 className='card-text' style={{
-                    color: '', fontFamily: '',
+                  <h1 className='card-text elem1' style={{
+                    color: '', fontFamily: '', transform: this.props.position0,
                     fontSize: ''
                   }}>
                     <EditableH1 value={this.props.message} changeProperty={this.props.changeProperty} />
                   </h1>
                 </Draggable>
                 <Draggable {...dragHandlerd}>
-                  <div className='icon'>
+                  <div className='icon elem2'>
                     <FontAwesomeIcon icon={['fas', 'wine-bottle']} />
                   </div>
                 </Draggable>
                 <Draggable {...dragHandlerd}>
-                  <div className='icon-glass'>
+                  <div className='icon-glass elem3'>
                     <FontAwesomeIcon icon={['fas', 'glass-cheers']} />
                   </div>
                 </Draggable>
